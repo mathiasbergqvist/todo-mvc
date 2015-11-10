@@ -1,25 +1,5 @@
 <input type="text" id="new-todo" placeholder="What needs to be done?"/>
-<section id="main">
-    {{!-- This is where our todos will go --}}
+{{#todo-list todos=model}}
+    {{!--The outlet is the nested route, todos.index--}}
     {{outlet}}
-    <input type="checkbox" id="toggle-all"/>
-</section>
-{!-- The rest of the todos mark up truncated for brevity --}
-
-<footer id="footer">
-    <span id="todo-count">
-        <strong>2</strong> todos left
-    </span>
-    <ul id="filters">
-        <li>
-            <a href="all" class="selected">All</a>
-        </li>
-        <li>
-            <a href="active">Active</a>
-        </li>
-        <li>
-            <a href="completed">Completed</a>
-        </li>
-    </ul>
-    <button id="clear-completed">Clear completed(1)</button>
-</footer>
+{{/todo-list}}
